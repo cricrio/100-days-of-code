@@ -18,13 +18,29 @@ Access-Control-Allow-Origin: *
 Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 ```
 
-The response doesn't contain these headers and the site on another domain or port the browser will throw a CORS issue.
+If the response doesn't contain these headers and the site on another domain or port, the browser will throw a CORS issue.
+
+
+**fetch()**
+fetch is method use to make request.
+```
+init = {
+  method, // GET, POST ....
+  headers, 
+  mode, // cors, no-cors (if no-cors mode enable Cache-Control, Content-Language,Content-Type,Expires,Last-Modified,Pragma can be added to request 
+  cache, 
+        }
+fetch(url,[init]) : Promise<Response>
+ 
+
+
+```
+
+### Day 2: January 1, 2017 
 
 **Today's Progress**: 
 I've done some 5 Basic Algorithme.
 I use Array.slice and Array.splice() as I often inverted these methods I'll write a memo.
-
-### Day 2: January 1, 2017 
 
 **Things I learned:**
 
