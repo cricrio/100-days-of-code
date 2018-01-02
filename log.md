@@ -3,6 +3,7 @@
 ### Day 1: December 31, 2017 
 
 **Today's Progress**: 
+
 + I try to play with the Twitter API on the browser. I found that the Twitter API can't be query from the browser because the servers of Twitter doesn't implement CORS.
 
 + I've done some 5 Basic Algorithme
@@ -39,6 +40,7 @@ fetch(url,[init]) : Promise<Response>
 ### Day 2: January 1, 2017 
 
 **Today's Progress**: 
+
 I've done some 5 Basic Algorithme.
 I use Array.slice and Array.splice() as I often inverted these methods I'll write a memo.
 
