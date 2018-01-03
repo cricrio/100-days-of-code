@@ -78,3 +78,75 @@ myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
 The exemples for this two methods are from the Mozilla website.
 
 
+### Day 3: January 1, 2017 
+
+**Today's Progress**: 
+
+I've finish the Basic Algorithme of Freecodecamp.
+
+**Things I learned:**
+
+**arguments of function**
+To access the argument of a function use : 
+```
+function(...){
+  const arg1 = arguments[0];
+  const arg2 = arguments[1];
+}
+```
+argument is not a array. It's only have the property length.
+To transform arguments in a object use :
+`const argArray = Array.from(arguments)`
+
+**String.charCodeAt(...)**  
+get the charCode of the char
+``` 
+const ZcharCode = 'Z'.charCodeAt(0)
+``` 
+
+**String.fromCharCode(...)**
+create a string from the charCode
+``` 
+const A = String.fromCharCode(65)
+``` 
+
+**Caesars Cipher**
+Shift all alphanumeric char of 13 positions
+
+```
+var ZcharCode = 'Z'.charCodeAt(0);
+var AcharCode = 'A'.charCodeAt(0);
+
+function shift(charr){
+ 
+  if(charr >=  'A' && charr <= 'Z'){
+   
+    var charCodeShift = charr.charCodeAt(0) + 13;
+    if(charCodeShift > ZcharCode){
+      charCodeShift = charCodeShift % ZcharCode + AcharCode -1;
+    }
+    return String.fromCharCode(charCodeShift);
+  }
+  return charr;
+}
+
+function rot13(str) { // LBH QVQ VG!
+ return  str
+   .toUpperCase()
+   .split('')
+   .map(shift)
+   .join('');
+}
+```
+
+**Array.sort(...)**
+Sort the array. The default sort order is according to string Unicode code points. So if we want to sort the array of number we need to provide a function to compare the number.
+
+```
+function compare(a,b){
+  if(a === b){
+    return 0
+  }
+  return a > b ? 1 : -1;
+}
+```
