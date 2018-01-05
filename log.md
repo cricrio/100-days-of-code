@@ -100,15 +100,17 @@ To transform arguments in a object use :
 
 **String.charCodeAt(...)**  
 get the charCode of the char
-``` 
+
+```
 const ZcharCode = 'Z'.charCodeAt(0)
-``` 
+```
 
 **String.fromCharCode(...)**
 create a string from the charCode
-``` 
-const A = String.fromCharCode(65)
-``` 
+
+
+
+`const A = String.fromCharCode(65)` 
 
 **Caesars Cipher**
 Shift all alphanumeric char of 13 positions
@@ -137,6 +139,7 @@ function rot13(str) { // LBH QVQ VG!
    .map(shift)
    .join('');
 }
+
 ```
 
 **Array.sort(...)**
@@ -150,3 +153,20 @@ function compare(a,b){
   return a > b ? 1 : -1;
 }
 ```
+
+
+### Day 3: January 2, 2017 
+**Today's Progress**: I have done a major refractor of the cafe-litteraire-front repo
+
+### Day 4: January 2, 2017 
+**Today's Progress**:
+I try to use ant-design, a UI framework. I wanted to use it for the date and time picker but the css of framework conflict with me css. I find the react-app-rewired to rewrite the config of create-react-app and add other babel plugin. I can use it to add the babel plugin transfrom the graphql file.
+
+### Day 5: January 5, 2017 
+
+**Today's Progress**: 
+.
+I install the firefox dev edition with ubuntu-make.
+Ubuntu make is a command line tool wich allow you to download and install the latest version of popular developer tools.
+
+`umake web firefox-dev`
