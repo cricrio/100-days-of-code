@@ -78,7 +78,7 @@ myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
 The exemples for this two methods are from the Mozilla website.
 
 
-### Day 3: January 1, 2017 
+### Day 3: January 2, 2017 
 
 **Today's Progress**: 
 
@@ -155,10 +155,10 @@ function compare(a,b){
 ```
 
 
-### Day 3: January 2, 2017 
+### Day 3: January 3, 2017 
 **Today's Progress**: I have done a major refractor of the cafe-litteraire-front repo
 
-### Day 4: January 2, 2017 
+### Day 4: January 4, 2017 
 **Today's Progress**:
 I try to use ant-design, a UI framework. I wanted to use it for the date and time picker but the css of framework conflict with me css. I find the react-app-rewired to rewrite the config of create-react-app and add other babel plugin. I can use it to add the babel plugin transfrom the graphql file.
 
@@ -170,3 +170,10 @@ I install the firefox dev edition with ubuntu-make.
 Ubuntu make is a command line tool wich allow you to download and install the latest version of popular developer tools.
 
 `umake web firefox-dev`
+
+### Day 5: January 6, 2017 
+
+**Today's Progress**: 
+
+I have done an algorithme to convert number to romain number.
+I start my new blog with Gatsby and tackyons
