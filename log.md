@@ -1,6 +1,6 @@
 # 100 Days Of Code - Log
 
-### Day 1: December 31, 2017 
+## Day 1: December 31, 2017 
 
 **Today's Progress**: 
 
@@ -37,7 +37,7 @@ fetch(url,[init]) : Promise<Response>
 
 ```
 
-### Day 2: January 1, 2017 
+## Day 2: January 1, 2017 
 
 **Today's Progress**: 
 
@@ -78,7 +78,7 @@ myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
 The exemples for this two methods are from the Mozilla website.
 
 
-### Day 3: January 2, 2017 
+## Day 3: January 2, 2017 
 
 **Today's Progress**: 
 
@@ -155,14 +155,14 @@ function compare(a,b){
 ```
 
 
-### Day 3: January 3, 2017 
+## Day 3: January 3, 2017 
 **Today's Progress**: I have done a major refractor of the cafe-litteraire-front repo
 
-### Day 4: January 4, 2017 
+## Day 4: January 4, 2017 
 **Today's Progress**:
 I try to use ant-design, a UI framework. I wanted to use it for the date and time picker but the css of framework conflict with me css. I find the react-app-rewired to rewrite the config of create-react-app and add other babel plugin. I can use it to add the babel plugin transfrom the graphql file.
 
-### Day 5: January 5, 2017 
+## Day 5: January 5, 2017 
 
 **Today's Progress**: 
 .
@@ -171,9 +171,92 @@ Ubuntu make is a command line tool wich allow you to download and install the la
 
 `umake web firefox-dev`
 
-### Day 5: January 6, 2017 
+## Day 5: January 6, 2017 
 
 **Today's Progress**: 
 
 I have done an algorithme to convert number to romain number.
-I start my new blog with Gatsby and tackyons
+I start my new blog with Gatsby and tackyons.
+
+## Day * : January 16, 2017 
+
+Some SQL katas on codewars.
+
+**Things I learned:**
+
+
+**Replace in string with postgreSQL**
+`regexp_replace(r.address , '\d','!','g') as address` **Do not forget the flag 'g'**
+
+
+For this challenge you need to create a simple HAVING statement, you want to count how many people have the same age and return the groups with 10 or more people who have that age.
+people table schema
+
+  id
+  name
+  age
+
+return table schema
+
+ age
+ total_people
+
+```
+SELECT age,
+COUNT(id) as total_people
+FROM people
+GROUP BY age
+HAVING COUNT(id) >= 10 /// keep only where COUNT(id) >= 10
+```
+You are given a table numbers with just one column, number. It holds some numbers that are already ordered.
+
+You need to write a query that makes them un-ordered.
+
+    SELECT *
+    FROM numbers
+    ORDER BY random();
+
+**Full text search**
+
+For this challenge you need to create a simple SELECT statement. Your task is to create a query and do a FULL TEXT SEARCH. You must search the product table on the field name for the word Awesome and return each row with the given word. Your query MUST contain to_tsvector and to_tsquery PostgreSQL functions.
+
+    SELECT id, name, price from product
+    WHERE to_tsvector(name) @@ to_tsquery('Awesome')    
+
+Ressource about FULL TEXT SEARCH : [ici](http://rachbelaid.com/postgres-full-text-search-is-good-enough/)
+
+
+**Relational division: Find all movies two actors cast in together**
+Best:
+    SELECT f.title 
+      FROM film f 
+      INNER JOIN film_actor a ON f.film_id = a.film_id
+      INNER JOIN film_actor b ON f.film_id = b.film_id
+      WHERE a.actor_id = 105 AND b.actor_id = 122
+      ORDER BY title;
+
+Mine: 
+
+    SELECT film.title FROM
+      ((SELECT film_id  FROM film_actor WHERE actor_id = 105) as film_105 INNER JOIN
+      (SELECT film_id  FROM film_actor WHERE actor_id = 122) as film_122
+      ON film_122.film_id = film_105.film_id)
+      INNER JOIN film ON film_105.film_id = film.film_id
+
+**Exemple lateral join**  [link to kata](https://www.codewars.com/kata/using-lateral-join-to-get-top-n-per-group/solutions?show-solutions=1)
+
+
+    SELECT c.category_id,
+       c.category,
+       p.title,
+       p.views,
+       p.post_id
+    FROM (SELECT c.id AS category_id, c.category FROM categories c ORDER BY c.category) c 
+    LEFT JOIN LATERAL
+       (SELECT p.title,
+               p.views,
+               p.id AS post_id
+          FROM posts p
+         WHERE p.category_id = c.category_id
+         ORDER BY p.views DESC, post_id ASC
+         LIMIT 2) p ON true;
